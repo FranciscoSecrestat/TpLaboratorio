@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <title>Mi publicación</title>
     <link rel="stylesheet" type="text/css" href="RedSocial.css">
-    <script type="text/javascript" src="RedSocial.js"></script>
+    <script type="text/javascript" src="RedSocial.js" defer></script>
   </head>
   <body>
     <div id="Home" class="col-sm-12">
       
       <div class="BarraSuperior">
         <img src="https://i.imgur.com/Qx8uR89.png" alt="Globo" >
-       <input type="text" name="" class="Input" placeholder="ingrese tu usuario...">
+       <form id="Usuario">
+        <input type="text" id="inpUsuario" placeholder="Ingrese el usuario...">
+       </form>
+       <div>
+        <p id="usuarioB">agregue un nombre</p>
+       </div>
       </div>
       <div class="Perfil">
        <img src="https://i.imgur.com/99qgQJy.jpeg ." class="FotoPerfil">
@@ -24,8 +29,8 @@
           <p>Trabajando en Lawn N</p>
         </div>
       </div>
-      <div>
-        <button type="button" id="btnSeguir" onclick="FbotonOn()"> Seguir </button>
+      <div class="Seguir">
+        <button type="button" id="btnSeguir" onclick="btnSeguir()"> Seguir </button>
       </div>
       <h5 style="color: slategray;">Publicado hace 1 semana</h5>
       <div class="Foto-Descripcion">
@@ -45,14 +50,21 @@
           </div>
         </div>
       </div>
-      <div class="BtnMegusta">
-        <button>me gusta</button>
-        <div class="likes">
-          <label>200 likes</label>
+      <div class="Megusta">
+          <button type="button" id="BtnMegusta">me gusta</button>
+        <div class="likes" id="likes">
+          <label>200 me gustas</label>
         </div>
-        
       </div>
-      
+      <div id="Comentarios">
+        <h3>Comentarios</h3>
+      </div>
+      <form id="FormComentarios">
+        <div>
+          <textarea id="Barra" rows="5"></textarea>
+        </div>
+        <button type="submit" class="BtnComentar">Enviar comentario</button>
+      </form>
     </div>
   </body>
 </tml>
