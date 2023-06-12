@@ -67,7 +67,7 @@ const app = Vue.createApp({
       telefono:"917-936-9585",
       ciudad:"Tokyo, Japón",
       trabajo:"trabajando en Lawn N",
-      seguir:"Seguir",
+      seguir: false,
       fotoPerfil: "https://i.imgur.com/99qgQJy.jpeg",
       informacion:"¡Hola a todos! Soy Jane, y actualmente vivo en la vibrante y emocionante ciudad de Tokio, Japon. Me encanta capturar la esencia de la vida urbana a través de mi lente explorando el contraste entre la arquitectura moderna y las tradiciones centenarias que conviven en esta metrópolis única. Desde rascacielos deslimbrantes y calles bulliciosas hasta templos serenos y jardines tranquilos, encuentro inspiración en cada rincón de esta increíble ciudad",
       inputText:'',

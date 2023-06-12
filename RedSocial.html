@@ -33,7 +33,9 @@
         </div>
       </div>
       <div class="Seguir">
-        <button type="button" id="btnSeguir" v-on:click="botonSeguir">{{seguir}}</button>
+        <button v-on:click="seguir = !seguir">
+          {{ seguir ? 'Dejar de seguir' : 'Seguir' }}
+        </button>
       </div>
       <h5 style="color: slategray;">Publicado hace 1 semana</h5>
       <div class="Foto-Descripcion">
