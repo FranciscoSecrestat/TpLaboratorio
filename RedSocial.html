@@ -5,32 +5,35 @@
     <title>Mi publicación</title>
     <link rel="stylesheet" type="text/css" href="RedSocial.css">
     <script type="text/javascript" src="RedSocial.js" defer></script>
+    <script src="https://unpkg.com/vue@3.3.2/dist/vue.global.js"></script>
   </head>
   <body>
+  <div id="app">
+
     <div id="Home" class="col-sm-12">
       
       <div class="BarraSuperior">
-        <img src="https://i.imgur.com/Qx8uR89.png" alt="Globo" >
+        <img :src=" fotoBarraSuperior " >
        <form id="Usuario">
-        <input type="text" id="inpUsuario" placeholder="Ingrese el usuario...">
+        <input v-model="inputText"  type="text" id="inpUsuario" :placeholder="textoP">
        </form>
        <div>
-        <p id="usuarioB">agregue un nombre</p>
+        <p id="usuarioB">{{ agregarNombre }}</p>
        </div>
       </div>
       <div class="Perfil">
-       <img src="https://i.imgur.com/99qgQJy.jpeg ." class="FotoPerfil">
+       <img :src="fotoPerfil"  class="FotoPerfil">
         <div>
-          <h1>Jane Doe</h1>
-          <p>Email: jane_doe@gmail.com</p>
-          <p>Fecha de nacimiento: 01/05/1996</p>
-          <p>Teléfono: 917-936-9585</p>
-          <p>Ciudad: Tokyo, Japón</p>
-          <p>Trabajando en Lawn N</p>
+          <h1>{{ nombre }}</h1>
+          <p>{{ email }} </p>
+          <p>{{ fechaNacimiento }}</p>
+          <p>{{ telefono }}</p>
+          <p>{{ ciudad }}</p>
+          <p>{{ trabajo }}</p>
         </div>
       </div>
       <div class="Seguir">
-        <button type="button" id="btnSeguir" onclick="btnSeguir()"> Seguir </button>
+        <button type="button" id="btnSeguir" v-on:click="botonSeguir">{{seguir}}</button>
       </div>
       <h5 style="color: slategray;">Publicado hace 1 semana</h5>
       <div class="Foto-Descripcion">
@@ -39,14 +42,7 @@
        <div class="SobreMi">
          <h1>Sobre mí</h1> 
           <div>
-           <p>¡Hola a todos! Soy Jane, y actualmente vivo
-             en la vibrante y emocionante ciudad de Tokio, Japon. 
-             Me encanta capturar la esencia de la vida urbana a través de mi lente
-             explorando el contraste entre la arquitectura moderna y las tradiciones 
-             centenarias que conviven en esta metrópolis única. Desde rascacielos
-             deslimbrantes y calles bulliciosas hasta templos serenos y jardines 
-             tranquilos, encuentro inspiración en cada rincón de esta increíble ciudad.
-           </p>
+           <p>{{ informacion }}</p>
           </div>
         </div>
       </div>
@@ -66,5 +62,7 @@
         <button type="submit" class="BtnComentar">Enviar comentario</button>
       </form>
     </div>
+  </div>
+  <script>app.mount('#grid-layout')</script>
   </body>
 </tml>
