@@ -74,6 +74,8 @@ const app = Vue.createApp({
       textoP:'Ingrese el usuario...',
       agregarNombre: "Agregue un nombre",
       fotoBarraSuperior: "https://i.imgur.com/Qx8uR89.png",
+      btnmegusta: "Me gusta",
+      likes: 201,
      
      
         
@@ -85,7 +87,15 @@ const app = Vue.createApp({
     }
   },
   methods:{
-    
+    Megusta(){
+      if(this.btnmegusta === "Me gusta"){
+        this.btnmegusta = "Ya no me gusta";
+        this.likes += 1;
+      }else{
+        this.btnmegusta = "Me gusta";
+        this.likes -= 1;
+      }
+    }
   }
 })
 app.mount('#app')
