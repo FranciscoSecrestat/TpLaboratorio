@@ -76,6 +76,8 @@ const app = Vue.createApp({
       fotoBarraSuperior: "https://i.imgur.com/Qx8uR89.png",
       btnmegusta: "Me gusta",
       likes: 201,
+      comment: '',
+      comments: []
      
      
         
@@ -95,6 +97,15 @@ const app = Vue.createApp({
         this.btnmegusta = "Me gusta";
         this.likes -= 1;
       }
+    },
+    addComment() {
+      if (this.comment) {
+        this.comments.push(this.comment);
+        this.comment = '';
+      }
+    },
+    deleteComment(index) {
+      this.comments.splice(index, 1);
     }
   }
 })

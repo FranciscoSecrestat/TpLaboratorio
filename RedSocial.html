@@ -54,17 +54,17 @@
           <p><span>{{ likes }}</span> Likes</p>
         </div>
       </div>
-      <div id="Comentarios">
-        <h3>Comentarios</h3>
+      <h2>Comentarios</h2>  
+      <div>
+        <textarea v-model="comment"></textarea>
+        <button @click="addComment">Agregar comentario</button>
+        <ul>
+          <li v-for="(c, index) in comments" :key="index">
+            {{ c }}
+            <button @click="deleteComment(index)">Eliminar</button>
+          </li>
+        </ul>
       </div>
-      <form id="FormComentarios">
-        <div>
-          <textarea id="Barra" rows="5"></textarea>
-        </div>
-        <button type="submit" class="BtnComentar">Enviar comentario</button>
-      </form>
-    </div>
-  </div>
   <script>app.mount('#grid-layout')</script>
   </body>
 </tml>
