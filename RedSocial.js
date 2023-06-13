@@ -72,12 +72,14 @@ const app = Vue.createApp({
       informacion:"¡Hola a todos! Soy Jane, y actualmente vivo en la vibrante y emocionante ciudad de Tokio, Japon. Me encanta capturar la esencia de la vida urbana a través de mi lente explorando el contraste entre la arquitectura moderna y las tradiciones centenarias que conviven en esta metrópolis única. Desde rascacielos deslimbrantes y calles bulliciosas hasta templos serenos y jardines tranquilos, encuentro inspiración en cada rincón de esta increíble ciudad",
       inputText:'',
       textoP:'Ingrese el usuario...',
-      agregarNombre: "Agregue un nombre",
+      userName: "",
       fotoBarraSuperior: "https://i.imgur.com/Qx8uR89.png",
       btnmegusta: "Me gusta",
       likes: 201,
       comment: '',
-      comments: []
+      comments: [],
+      viewUserForm: true,
+      
      
      
         
@@ -99,14 +101,26 @@ const app = Vue.createApp({
       }
     },
     addComment() {
-      if (this.comment) {
-        this.comments.push(this.comment);
+      if (this.comment && this.userName) {
+        this.comments.push({ userName:this.userName, message:this.comment });
         this.comment = '';
       }
     },
     deleteComment(index) {
       this.comments.splice(index, 1);
+    },
+    handlerSubmitUser: function(){
+      if(this.inputText && typeof this.inputText == "string" && !this.userName){
+        this.userName = this.inputText;
+        this.viewUserForm = false;
+      }
+    },
+    handlerLogoutUser: function(){
+      this.userName = "";
+      this.viewUserForm = true;
     }
+    
   }
+  
 })
 app.mount('#app')

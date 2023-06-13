@@ -14,12 +14,14 @@
       
       <div class="BarraSuperior">
         <img :src=" fotoBarraSuperior " >
-       <form id="Usuario">
+       <form @submit.prevent = "handlerSubmitUser" v-if="viewUserForm">
         <input v-model="inputText"  type="text" id="inpUsuario" :placeholder="textoP">
+
        </form>
        <div>
-        <p id="usuarioB">{{ agregarNombre }}</p>
-       </div>
+        <p id="usuarioB">{{ userName? userName:"agrega un usuario" }}</p>
+        <button v-if="!viewUserForm" @click="handlerLogoutUser">Cerrar sesion</button>
+       </div> 
       </div>
       <div class="Perfil">
        <img :src="fotoPerfil"  class="FotoPerfil">
@@ -59,12 +61,11 @@
         <textarea v-model="comment"></textarea>
         <button @click="addComment">Agregar comentario</button>
         <ul>
-          <li v-for="(c, index) in comments" :key="index">
-            {{ c }}
+          <li v-for="(comment, index) in comments" :key="index">
+            {{ `${comment.userName} : ${comment.message}`  }}
             <button @click="deleteComment(index)">Eliminar</button>
           </li>
         </ul>
       </div>
-  <script>app.mount('#grid-layout')</script>
   </body>
 </tml>
