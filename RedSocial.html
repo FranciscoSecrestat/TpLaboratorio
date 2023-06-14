@@ -9,63 +9,70 @@
   </head>
   <body>
   <div id="app">
-
+    
     <div id="Home" class="col-sm-12">
-      
-      <div class="BarraSuperior">
-        <img :src=" fotoBarraSuperior " >
-       <form @submit.prevent = "handlerSubmitUser" v-if="viewUserForm">
-        <input v-model="inputText"  type="text" id="inpUsuario" :placeholder="textoP">
 
-       </form>
-       <div>
-        <p id="usuarioB">{{ userName? userName:"agrega un usuario" }}</p>
-        <button v-if="!viewUserForm" @click="handlerLogoutUser">Cerrar sesion</button>
-       </div> 
+     <div class="BarraSuperior">
+          <img :src=" fotoBarraSuperior " >
+        <form @submit.prevent = "handlerSubmitUser" v-if="viewUserForm">
+          <input v-model="inputText"  type="text" id="inpUsuario" :placeholder="textoP" class="custom-input-log">
+        </form>
+        <br>
+        <div>
+          <p id="usuarioB" class="user-log">{{ userName? userName:"" }}</p>
+          <button v-if="!viewUserForm" @click="handlerLogoutUser" class="btn-close">Cerrar sesion</button>
+        </div> 
       </div>
       <div class="Perfil">
        <img :src="fotoPerfil"  class="FotoPerfil">
         <div>
           <h1>{{ nombre }}</h1>
-          <p>{{ email }} </p>
-          <p>{{ fechaNacimiento }}</p>
-          <p>{{ telefono }}</p>
-          <p>{{ ciudad }}</p>
-          <p>{{ trabajo }}</p>
+          <p><strong>Email: </strong>{{ email }} </p>
+          <p><strong>Fecha de nacimiento: </strong>{{ fechaNacimiento }}</p>
+          <p><strong>Teléfono: </strong>{{ telefono }}</p>
+          <p><strong>Ciudad: </strong>{{ ciudad }}</p>
+          <p><strong>Trabajo: </strong>{{ trabajo }}</p>
         </div>
       </div>
-      <div class="Seguir">
-        <button v-on:click="seguir = !seguir">
+      <div>
+        <button v-on:click="seguir = !seguir" class="btnSeguir">
           {{ seguir ? 'Dejar de seguir' : 'Seguir' }}
         </button>
       </div>
-      <h5 style="color: slategray;">Publicado hace 1 semana</h5>
-      <div class="Foto-Descripcion">
-       <img src="https://i.imgur.com/bq9db41.jpeg" class="ImagenJapon">
-       
-       <div class="SobreMi">
-         <h1>Sobre mí</h1> 
-          <div>
-           <p>{{ informacion }}</p>
+      <div class="fondo_coment_m">
+        <h1>Sobre mí</h1> 
+         <div>
+          <p>{{ informacion }}</p>
+         </div>
+       </div>
+       <br>
+     </div>
+      <div class="fondo_coment">
+        <h5 style="color: slategray;">Publicado hace 1 semana</h5>
+        <div class="Foto-Descripcion">
+         <img src="https://i.imgur.com/bq9db41.jpeg" class="ImagenJapon">
+        
+          <div class="move_content">        
+                <h2>Comentarios</h2>  
+                <div>
+                  <textarea v-model="comment" class="custom-input"  ></textarea>
+                  <button @click="addComment" class="btnAdd">Agregar comentario</button>
+                  <p><strong>MATIAS M: </strong>{{ comentUno }}</p>
+                  <p><strong>MARTA J: </strong>{{ comentDos }}</p>
+        
+                    <p v-for="(comment, index) in comments" :key="index">
+                      <strong>{{ comment.userName }}: </strong>{{ comment.message }}
+                      <button @click="deleteComment(index)" class="clear">Eliminar</button>
+                    </p>
+                </div>
+          </div>
+          <div class="conutLik">
+            <button  @click="Megusta" type="button" id="BtnMegusta">{{ btnmegusta }}</button>
+            <p><span>{{ likes }} Likes</span></p>
           </div>
         </div>
       </div>
-      <div class="Megusta">
-          <button  @click="Megusta" type="button" id="BtnMegusta">{{ btnmegusta }}</button>
-        <div class="likes" id="likes">
-          <p><span>{{ likes }}</span> Likes</p>
-        </div>
-      </div>
-      <h2>Comentarios</h2>  
-      <div>
-        <textarea v-model="comment"></textarea>
-        <button @click="addComment">Agregar comentario</button>
-        <ul>
-          <li v-for="(comment, index) in comments" :key="index">
-            {{ `${comment.userName} : ${comment.message}`  }}
-            <button @click="deleteComment(index)">Eliminar</button>
-          </li>
-        </ul>
-      </div>
+  </div>
+
   </body>
 </tml>

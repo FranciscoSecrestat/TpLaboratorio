@@ -10,7 +10,7 @@
 
 .ImagenJapon{
   border-radius: 10px;
-  margin-right: 20px;
+  margin-right: 12px;
   width: 700px;
 }
 
@@ -39,14 +39,17 @@
 
 .FotoPerfil{
   border-radius: 500px;
-  margin-right: 10px;
-  width: 200px;
-  
-
+  margin-right: 120px;
+  width: 259px;
+  height: 17rem;
+  border: 4px solid green;
+  padding: 5px;
 }
 .Perfil{
   display: flex;
   align-items: stretch;
+  position: relative;
+  margin: 8px;
 }
 
 #btnSeguir {
@@ -60,20 +63,23 @@
 
 }
 
-.SobreMi{
-  grid-column-end: span;
+.user-log{
+  color: #fff;
   text-align:left;
 }
 
 #BtnMegusta{
   background-color: #3897f0;
   border: none;
-  padding: 8px 16px;
+  padding: 9px 8px;
   font-size: 14px;
   font-weight: 600;
   border-radius: 5px;
   cursor: pointer;
   margin: 5px;
+  left: -209px;
+  top: 156px;
+  left: -229px;
 }
 
 .likes{
@@ -86,15 +92,6 @@
   color: black;
 }
 
-.BtnComentar{
-  background-color: #3897f0;
-  border: none;
-  padding: 8px 16px;
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: 5px;
-  cursor: pointer;
-}
 
 #Comentarios{
   width: 400px;
@@ -104,4 +101,132 @@
 
 #Comentarios{
   background-color: #3897f0;
+}
+
+.fondo_coment{
+color: #fff!important;
+    background-color: RGBA(33,37,41,var(--bs-bg-opacity,1))!important;
+    padding: 47px 51px 170px;
+    border-radius: 10px;
+    position: relative;
+}
+
+
+
+.custom-input {
+  border: none;
+  border-bottom: 2px solid rgb(158, 151, 151);
+  background-color: transparent;
+  padding: 0px;
+  font-size: 16px;
+  color: #d3d6c9;
+  width: 315px;
+}
+.btnAdd {
+  background-color: #182018;
+  border-radius: 16px;
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  position: relative;
+  left: 20px;
+  top: 0px;
+  width: 110px;
+}
+.move_content{
+  top: 10px;
+  position: relative;
+  top: 15px;
+
+}
+.btnLik {
+  background-color: #BEDDEF;
+  border-radius: 16px;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  position: relative;
+  left: 315px;
+  top: -10px;
+}
+
+.conutLik{
+  left: 35px;
+  position: relative;
+  left: -92px;
+  top: 112px;
+}
+.btnSeguir {
+  background-color: #2AA02A;
+  border-radius: 16px;
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  position: relative;
+  left: 1300px;
+  top: -30px;
+}
+.custom-input-log {
+  border: none;
+  border-bottom: 2px solid rgb(255 255 255);
+  background-color: #809ea800;
+  padding: 10px;
+  font-size: 16px;
+  color: #ffffff;
+  width: 315px;
+  position: relative;
+  left: 650px;
+
+}
+#inpUsuario::placeholder{
+  color: #fff;
+}
+
+.fondo_coment_m {
+  color: #825454!important;
+  background-color: #EADED0;
+  padding: 18px 49px 44px;
+  border-radius: 10px;
+  position: relative;
+  text-align: justify;
+  }
+
+.btn-close{
+  background-color: #b8d2eb;
+    border: none;
+    padding: 9px 8px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    left: -209px;
+    top: 388px;
+    left: -226px;
+}
+
+.clear{
+  background-color: #ff0145;
+  border: none;
+  padding: 9px 8px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+  left: -209px;
+  top: 388px;
+  left: -226px;
+}
+.muv-p{
+  left: 10px;
 }

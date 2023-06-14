@@ -79,6 +79,8 @@ const app = Vue.createApp({
       comment: '',
       comments: [],
       viewUserForm: true,
+      comentUno: "Muy buena foto Jane!!",
+      comentDos: "Wooow Jane!!"
       
      
      
@@ -102,7 +104,7 @@ const app = Vue.createApp({
     },
     addComment() {
       if (this.comment && this.userName) {
-        this.comments.push({ userName:this.userName, message:this.comment });
+        this.comments.push({ userName:this.userName.toUpperCase(), message:this.comment });
         this.comment = '';
       }
     },
@@ -111,7 +113,7 @@ const app = Vue.createApp({
     },
     handlerSubmitUser: function(){
       if(this.inputText && typeof this.inputText == "string" && !this.userName){
-        this.userName = this.inputText;
+        this.userName = this.inputText.toUpperCase();
         this.viewUserForm = false;
       }
     },
